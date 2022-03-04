@@ -1,0 +1,52 @@
+<h1>Kata - Training - HiiYaaaaa</h1>
+
+<iframe src="https://giphy.com/embed/3otOKvastzBHckMWDC" width="480" height="268" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/whatwedointheshadows-what-we-do-in-the-shadows-orchard-3otOKvastzBHckMWDC">via GIPHY</a></p>
+
+<script>
+/** Array.diff - remove duplicate items from two arrays
+*** Your goal in this kata is to implement a difference function, 
+*** which subtracts one list from another and returns the result.
+*** It should remove all values from list a, which are present in list b keeping their order. 
+**/ 
+function arrayDiff(a,b) {
+    return a.filter(item => !b.includes(item));
+}
+
+//console.log(arrayDiff([1,2],[1]));
+
+/** Fibonacci 
+*** A number is Fibonacci if and only if one or both of (5*n2 + 4) or (5*n2 – 4) is a perfect square 
+*** determine whether a number provided to the function is fibonacci  
+**/ 
+
+function productFib(prod){
+    //let fibby1 = (5 * (Math.pow(prod,2) + 4));
+    //let fibby2 = (5 * (Math.pow(prod,2) - 4));
+    //let fib1sqr = Math.sqrt(fibby1);
+    //let fib2sqr = Math.sqrt(fibby2);
+    //if((fib1sqr * fib1sqr == fibby1) | (fib2sqr * fib2sqr == fibby2)) {
+    //} else {
+    //    console.log('false');
+    //}
+    let fibo = [0,1];
+    for(x = 0; x < prod; x++) {
+        let newNum = fibo[x] + fibo[x+1];
+        fibo.push(newNum);
+        if(fibo[x] >= prod) {
+            break;
+        }
+    }
+    for(i=0; i < fibo.length; i++) {
+        let result = []
+        if(fibo[i] * fibo[i+1] == prod) {
+            result.push(fibo[i], fibo[i+1], true);
+            return result;
+        } else if (fibo[i] * fibo[i+1] > prod) {
+            result.push(fibo[i], fibo[i+1], false);
+            return result;
+        }
+    }
+}
+
+console.log(productFib(74049690));
+</script>
