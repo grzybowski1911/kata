@@ -48,5 +48,17 @@ function productFib(prod){
     }
 }
 
+// a way better solution for fibonacci
+
+function productFib(prod){
+  var n = 0;
+  var nPlus = 1;  
+  while(n*nPlus < prod) {
+    nPlus = n + nPlus;
+    n = nPlus - n;
+  }
+  return [n, nPlus, n*nPlus===prod];
+}
+
 console.log(productFib(74049690));
 </script>
