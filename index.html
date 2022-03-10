@@ -89,15 +89,17 @@ function morseCode(message) {
                  S:'...',T:'-',U:'..-',V:'...-',W:'.--',X:'-..-',Y:'-.--',Z:'--..'}
     let msgAry = message.split(" ");
     let x = 0;
-    for($i = 0; $i < alpha.length; $i++) {
-        if(msgAry[x] == alpha[i]) {
-            
+    let result = '';
+    for (property in alpha) {
+        if(alpha[property] == msgAry[x]) {
+            result += property;
+            x++;
         }
     }
     return msgAry;
 }
 
-console.log(morseCode("-... . -."));
+console.log(morseCode('..-. ..- -.-. -.-'));
 
 
 </script>
