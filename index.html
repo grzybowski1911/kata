@@ -92,14 +92,24 @@ function morseCode(morseCode) {
                 '/':'-..-.','-':'-....-','=':'-...-',"'":'.----.',"_":'..--.-',"!":'-.-.--','&':'.-...',
                 '"':'.-..-.',";":'-.-.-.','$':'...-..-',"SOS":'...---...'};
     let msgAry = morseCode.split(" ");
+    // TO DO 
+    // create regex logic to match any number of blank spaces before the first character
+    // then need to remove those spaces before converting to array....
+    regex = /\s/; 
+    console.log(msgAry[0].match);
     let result = '';
     for(i = 0; i < msgAry.length; i++) {
-        if(msgAry[i] == '' && msgAry[i+1]) {
-            result += ' ';
+        if(msgAry[0].match(regex)) {
+            console.log('skipped');
         } else {
-            for (property in alpha) {
-            if(alpha[property] == msgAry[i]) {
-                    result += property;
+            // adding spaces between converted strings
+            if(msgAry[i] == '' && msgAry[i+1]) {
+                result += ' ';
+            } else {
+                for (property in alpha) {
+                if(alpha[property] == msgAry[i]) {
+                        result += property;
+                    }
                 }
             }
         }
@@ -107,7 +117,7 @@ function morseCode(morseCode) {
     return result;
 }
 
-console.log(morseCode(' ...---...'));
+console.log(morseCode('         ...---...'));
 
 
 </script>
