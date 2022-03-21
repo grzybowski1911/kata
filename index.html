@@ -105,11 +105,27 @@ function morseCode(morseCode) {
             }
         }
     }
+    // spent way too much trying to figure out a regex solution 
+    // trim was much better solution... 
     let removeSpaces = result.trim();
     return removeSpaces;
 }
 
-console.log(morseCode('         .... . -.--   .--- ..- -.. .'));
+//console.log(morseCode('         .... . -.--   .--- ..- -.. .'));
 
+// ran aout of time to complete morseCode challenge
+
+// Complete the solution so that the function will break up camel casing, using a space between words.
+// "camelCasing"  =>  "camel Casing"
+// "identifier"   =>  "identifier"
+// ""             =>  ""
+
+function solution(string) {
+    // matching any capital letters in a string regex
+    let regex = /([A-Z])/g;
+    return string.replace(regex, ' $1').trim();
+}
+
+console.log(solution('TheDevilWearsPrada'));
 
 </script>
