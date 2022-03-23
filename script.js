@@ -1,3 +1,5 @@
+// regex resrouce: https://regex-generator.olafneumann.org/
+
 /** Array.diff - remove duplicate items from two arrays
 *** Your goal in this kata is to implement a difference function, 
 *** which subtracts one list from another and returns the result.
