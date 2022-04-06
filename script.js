@@ -159,4 +159,61 @@ function generateHashtag (str) {
     return result;
 }
 
-console.log(generateHashtag('Do We have A Hashtag'));
+//console.log(generateHashtag('Do We have A Hashtag'));
+
+// In this kata you have to create all permutations of a non empty input string 
+// and remove duplicates, if present. 
+// This means, you have to shuffle all letters from the input in all possible orders.
+
+// n = the number of possible outcomes for each event. 
+// r = the size of each permutation.
+
+function permutations(string) {
+ 
+}
+
+// never figured out how permutations work, am do not have the smarts 
+
+// rgb to hex convertor 
+// divide first number by 16, multiply remainder by 16 for hex numbers
+
+
+function rgb(r, g, b){
+    let rbg = [r, g, b];
+    let hex = ''; 
+    let newArr = [];
+    rbg.forEach(element => {
+       newArr = splitNum(element);
+       newArr.forEach(e => {
+            hex += matchNum(e).toString().toUpperCase();
+       });
+    });
+    return hex;
+}
+
+function splitNum(x) {
+    if(x > 255) {
+        x = 255;
+    } 
+    if ( x < 0 ) {
+        x = 0;
+    }
+    let result;
+    let y = x / 16;
+    if ((Math.floor(y) > 0)) {
+        result = [(Math.floor(y)), (16 * (y - Math.floor(y)))];
+    } else {
+        result = [0,0];
+    }
+    return result;
+}
+
+function matchNum(x) {
+    newX = x;
+    let hex = [0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f'];
+    let result = hex[newX];
+    return result;
+}
+
+console.log(rgb(242,272,13));
+//console.log(splitNum(300));
