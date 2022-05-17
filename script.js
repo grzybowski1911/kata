@@ -219,8 +219,17 @@ console.log(rgb(242,272,13));
 //console.log(splitNum(300));
 
 function domainName(url){
-    let regex = /https:\/\/[a-zA-Z]+\.com/i;
-    return url.replace('http://','').replace('https://','').replace('.com','');
+    //match anything between two periods 
+    let regex2 = /(?<=\.).+?(?=\.)/g; 
+    //match anything between a / and a period 
+    let regex3 = /(?<=\/\/).+?(?=\.)/g; 
+
+    if(url.match(regex2)) {
+        return url.match(regex2);
+    } else {
+        return url.match(regex3);
+    }
 }
 
-console.log(domainName("https://google.com"));
+// failing this check. split method instead?
+console.log(domainName("http://google.co.jp"));
