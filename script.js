@@ -217,3 +217,10 @@ function matchNum(x) {
 
 console.log(rgb(242,272,13));
 //console.log(splitNum(300));
+
+function domainName(url){
+    let regex = /https:\/\/[a-zA-Z]+\.com/i;
+    return url.replace('http://','').replace('https://','').replace('.com','');
+}
+
+console.log(domainName("https://google.com"));
